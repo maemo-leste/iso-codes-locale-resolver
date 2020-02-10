@@ -182,7 +182,7 @@ iso_codes_locale_resolve_simple(const gchar *lang_id)
   setenv("LANGUAGE", id[0], TRUE);
   old_locale = setlocale(LC_ALL, "");
 
-  rv = g_strdup_printf("%s (%s)\n",
+  rv = g_strdup_printf("%s (%s)",
                        dgettext("iso_639_3", lang),
                        dgettext("iso_3166", cntry));
 
