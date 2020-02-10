@@ -1,0 +1,30 @@
+AC_INIT([iso_codes_locale_resolver], [1.00])
+AC_CANONICAL_SYSTEM
+
+AC_CONFIG_MACRO_DIRS([m4])
+AM_CONFIG_HEADER(config.h)
+AC_DISABLE_STATIC
+
+AM_MAINTAINER_MODE
+
+AM_INIT_AUTOMAKE
+
+AC_PROG_CC
+AC_PROG_INSTALL
+AM_PROG_LIBTOOL
+
+PKG_PROG_PKG_CONFIG
+
+PKG_CHECK_MODULES(DEP, [glib-2.0 libxml-2.0 iso-codes])
+
+AC_SUBST(DEP_LIBS)
+AC_SUBST(DEP_CFLAGS)
+
+ISO_CODES_PREFIX=`pkg-config iso-codes --variable=prefix`
+AC_SUBST(ISO_CODES_PREFIX)
+
+AC_OUTPUT([
+Makefile
+lib/Makefile
+])
+
