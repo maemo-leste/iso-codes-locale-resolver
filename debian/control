@@ -1,0 +1,15 @@
+Source: iso-codes-locale-resolver
+Section: libs
+Priority: optional
+Maintainer: Ivaylo Dimitrov <ivo.g.dimitrov.75@gmail.com>
+Build-Depends: debhelper (>= 10), autotools-dev, iso-codes
+Standards-Version: 3.9.8
+Vcs-Git: https://github.com/maemo-leste/iso-codes-locale-resolver.git
+Vcs-Browser: https://github.com/maemo-leste/iso-codes-locale-resolver
+
+Package: iso-codes-locale-resolver0
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, iso-codes
+Description: Locale resolver library
+ The library in this package resolves locale codes to human readable
+ string.
